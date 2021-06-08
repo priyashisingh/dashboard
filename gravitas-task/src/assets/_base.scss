@@ -1,0 +1,114 @@
+.component-card{
+    background-color: white;
+    border: 1px solid #c3c3c3;
+    border-radius: 5px;
+}
+.color-green{
+color: #12d8aa
+}
+.color-gray{
+    color: #ababab;
+}
+
+   .add-card{
+.ng-fa-icon{
+    svg{
+  width: 2rem;
+    height: 100%; 
+    }
+}
+        }
+
+.info-cards{
+        padding: 2rem;
+        @include mobile{
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;        
+        }
+
+    .heading{
+            display: flex;
+    align-items: center;
+     margin-bottom: 1.5rem;
+     .ng-fa-icon{
+         margin-right: 1rem;
+             display: flex;
+    align-items: center;
+    svg{
+        width: 2rem;
+        height: 100%;
+    }
+     }
+        h3{
+        font-weight: 300;
+    letter-spacing: 0.5px;
+    margin: 0;
+        }
+    }
+    .info{
+            margin-bottom: 1rem;
+            display: flex;
+    justify-content: space-between;
+&:last-child{
+      margin-bottom: 0rem;
+}
+    }
+
+}
+
+.mb-0{
+    margin-bottom: 0;
+}
+.mx-2{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.ml-2{
+    margin-left: 0.5rem;
+}
+.mr-2{
+    margin-right: 0.5rem;
+}
+
+.mb-4{
+    margin-bottom: 2rem;
+}
+
+.font-light{
+        font-weight: 300;
+}
+
+// datepicker styling  
+.form-group.hidden {
+      width: 0;
+      margin: 0;
+      border: none;
+      padding: 0;
+    }
+    .custom-day {
+      text-align: center;
+      padding: 0.185rem 0.25rem;
+      display: inline-block;
+      height: 2rem;
+      width: 2rem;
+    }
+    .custom-day.focused {
+      background-color: #e6e6e6;
+    }
+    .custom-day.range, .custom-day:hover {
+      background-color: rgb(2, 117, 216);
+      color: white;
+    }
+    .custom-day.faded {
+      background-color: rgba(2, 117, 216, 0.5);
+    }
+  
+
+    .chart-filter{
+        .filter-box{
+            border: 0;
+            .export-dropdown{
+                display: none !important;
+            }
+        }
+    }

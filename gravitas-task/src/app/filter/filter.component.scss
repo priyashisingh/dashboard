@@ -1,0 +1,116 @@
+@import "../../assets/abstracts/mixins.scss";
+.filter-box {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  @include mobile{
+    flex-direction: column;
+  }
+  @include tablet{
+    flex-direction: column;
+  }
+
+  .filter-heading {
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 2rem;
+      height: 100%;
+    }
+  }
+
+  .right-div {
+    display: flex;
+    align-items: center;
+
+    @include mobile{
+      flex-direction: column;
+    }
+
+    @include tablet{
+      flex-wrap: wrap;
+    }
+
+    .form-inline {
+      display: flex;
+      align-items: center;
+      margin-right: 1rem;
+
+      @include mobile{
+        flex-direction: column;
+        margin-bottom: 2rem;
+      }
+      @include tablet{
+        margin-bottom: 2rem;
+      }
+  
+      .input-group {
+        border: 1px solid #c7c7c7;
+        border-radius: 2em;
+
+        .calendar {
+          border: none;
+          border-radius: 2em;
+
+          &:focus {
+            outline: none;
+            box-shadow: none;
+          }
+
+        }
+
+        .form-control {
+          border: none;
+          background: transparent;
+          width: 9rem;
+          font-size: 14px;
+          color: gray;
+        }
+      }
+
+      .hidden {
+        .input-group {
+          border: 0;
+        }
+      }
+    }
+
+    .dropdown {
+      @include mobile{
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+      .dropdown-toggle {
+        border: 1px solid #c7c7c7;
+        border-radius: 2em;
+        color: gray;
+        font-size: 14px;
+        padding: 0.5rem 0.8rem;
+        width: 11rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:hover {
+          background-color: #f3f3f3;
+        }
+
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+
+      .dropdown-menu {
+        font-size: 14px;
+
+        .dropdown-item {
+          color: #ababab;
+        }
+      }
+    }
+  }
+}

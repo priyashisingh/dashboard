@@ -1,0 +1,16 @@
+<div class="container-fluid detail-page" >
+    <div class="row">
+        <div class="col-12 back-bar">
+            <button class="color-green back-btn" [routerLink]="['/dashboard']"><fa-icon [icon]="faChevronLeft"></fa-icon>  
+</button>
+<p class="mb-0">Total Messages</p>
+        </div>
+        <div class="col-12 chart-filter">
+            <div class="component-card">
+                <app-filter></app-filter>
+                <app-detail-chart></app-detail-chart>
+            </div>
+    
+        </div>
+    </div>
+  </div>

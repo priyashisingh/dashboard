@@ -1,0 +1,85 @@
+<div class="container-fluid component-card filter-box">
+<div class="filter-heading color-green">
+<fa-icon [icon]="faFilter"></fa-icon>  
+<h2 class="mb-0 ml-2 font-light">Filter</h2>
+</div>
+<div class="right-div">
+<form class="form-inline">
+ <div class="form-group hidden">
+    <div class="input-group">
+      <input name="datepicker"
+             class="form-control"
+             ngbDatepicker
+             #datepicker="ngbDatepicker"
+             [autoClose]="'outside'"
+             (dateSelect)="onDateSelection($event)"
+             [displayMonths]="2"
+             [dayTemplate]="t"
+             outsideDays="hidden"
+             [startDate]="fromDate!"
+             tabindex="-1">
+      <ng-template #t let-date let-focused="focused">
+        <span class="custom-day"
+              [class.focused]="focused"
+              [class.range]="isRange(date)"
+              [class.faded]="isHovered(date) || isInside(date)"
+              (mouseenter)="hoveredDate = date"
+              (mouseleave)="hoveredDate = null">
+          {{ date.day }}
+        </span>
+      </ng-template>
+    </div>
+  </div>
+<p class="mb-0 mr-2 color-gray">Date Range</p>
+  <div class="form-group">
+    <div class="input-group">
+     <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button">
+        <fa-icon [icon]="faCalendarAlt"></fa-icon>  
+        </button>
+      </div>
+      <input #dpFromDate
+             class="form-control" placeholder="yyyy-mm-dd"
+             name="dpFromDate"
+             [value]="formatter.format(fromDate)"
+             (input)="fromDate = validateInput(fromDate, dpFromDate.value)">
+     
+    </div>
+  </div>
+  <p class="mb-0 mx-2 color-gray">to</p>
+  <div class="form-group ml-2">
+    <div class="input-group">
+     <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button">
+        <fa-icon [icon]="faCalendarAlt"></fa-icon>  
+        </button>
+      </div>
+      <input #dpToDate
+             class="form-control" placeholder="yyyy-mm-dd"
+             name="dpToDate"
+             [value]="formatter.format(toDate)"
+             (input)="toDate = validateInput(toDate, dpToDate.value)">
+     
+    </div>
+  </div>
+</form>
+   <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary mr-2" id="dropdownBasic1" ngbDropdownToggle>Custom Range</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Action - 1</button>
+        <button ngbDropdownItem>Another Action</button>
+        <button ngbDropdownItem>Something else is here</button>
+      </div>
+    </div>
+ 
+    <div ngbDropdown class="d-inline-block export-dropdown ml-2">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Export to Pdf</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Action - 1</button>
+        <button ngbDropdownItem>Another Action</button>
+        <button ngbDropdownItem>Something else is here</button>
+      </div>
+    </div>
+  </div>
+
+</div>
